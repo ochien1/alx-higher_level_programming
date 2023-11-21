@@ -1,18 +1,15 @@
 #!/usr/bin/python3
-Square = __import__('102-square').Square
 
-s_5 = Square(5)
-s_6 = Square(6)
 
-if s_5 < s_6:
-    print("Square 5 < Square 6")
-if s_5 <= s_6:
-    print("Square 5 <= Square 6")
-if s_5 == s_6:
-    print("Square 5 == Square 6")
-if s_5 != s_6:
-    print("Square 5 != Square 6")
-if s_5 > s_6:
-    print("Square 5 > Square 6")
-if s_5 >= s_6:
-    print("Square 5 >= Square 6")
+def magic_calculation(a, b):
+    result = 0
+    for i in range(1, 3):
+        try:
+            if i > a:
+                raise Exception('Too far')
+            else:
+                result += a ** b / i
+        except Exception:
+            result = b + a
+            break
+    return (result)
